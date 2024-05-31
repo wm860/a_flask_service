@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{% block title %} Welcome to my poll app written in flask using redis server and cellery queue {% endblock %}</h2>
+
+{% block list %}
+<h3>
+    <ul>
+        <li>First please login (to be done) </li>
+        <li>Then please fill the poll</li>
+        <li>Then results will be saved in local db</li>
+    </ul>
+</h3>
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{% block title %} Server response: {% endblock %}</h2>
+
+<h1>Record Created Successfully!</h1>
+<p><strong>Username:</strong> {{ data.username }}</p>
+<p><strong>Age:</strong> {{ data.age }}</p>
+<p><strong>City:</strong> {{ data.city }}</p>
+<p><strong>Country:</strong> {{ data.country }}</p>
+<a href="/">Add another record</a>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{% block title %} Fill the flask-celery poll {% endblock %}</h2>
+<form method="post">
+
+    <label for="username">What is your username:</label>
+    <br>
+    <input type="text" name="username" placeholder="username" value="{{ request.form.username }}"></input>
+    <br>
+    <br>
+    <label for="age"> What is your age:</label>
+    <br>
+    <input type="text" name="age" placeholder="Age" value="{{ request.form.age}}"></input>
+    <br>
+    <br>
+    <label for="city"> What is your city:</label>
+    <br>
+    <input type="text" name="city" placeholder="City" value="{{ request.form.city }}"></input>
+    <br>
+    <br>
+    <label for="country"> What is your country:</label>
+    <br>
+    <input type="text" name="country" placeholder="Country" value="{{ request.form.country }}"></input>
+    <br>
+
+    <div class=''>
+    <p>Enter submit button, please</p>
+    </div>
+
+
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
