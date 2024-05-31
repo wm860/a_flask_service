@@ -49,3 +49,7 @@ def register():
 
     if request.method == "POST":
         return redirect(url_for("main.index"))
+
+@main_blueprint.route("/loaderio-12e71f86ba0e1bc3612073cdb4846861.txt")
+def loaderio():
+    return "loaderio-12e71f86ba0e1bc3612073cdb4846861"
