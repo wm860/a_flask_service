@@ -3,6 +3,7 @@ import os
 from flask import Flask
 from . import models
 
+
 def create_app(script_info=None):
     app = Flask(
         __name__,

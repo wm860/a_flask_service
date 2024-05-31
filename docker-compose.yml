@@ -7,7 +7,7 @@ services:
     image: web
     container_name: web-app
     ports:
-      - 8002:5000
+      - "8002:5000"
     command: python run.py run -h 0.0.0.0
     volumes:
       - .:/usr/src/app
@@ -21,7 +21,7 @@ services:
 
   worker:
     build: .
-    command: celery --app server.tasks.celery worker --loglevel=info #--logfile=project/logs/celery.log
+    command: celery --app server.tasks.celery worker --loglevel=info
     volumes:
       - .:/usr/src/app
     environment:
@@ -35,3 +35,14 @@ services:
 
   redis:
     image: redis:6-alpine
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./confs/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - redis
+      - web
+      - worker
